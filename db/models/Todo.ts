@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
-export interface Task extends mongoose.Document {
+export interface Todo extends mongoose.Document {
   task: string;
   isCompleted: boolean;
 }
 
-const TaskSchema = new mongoose.Schema<Task>({
+const TodoSchema = new mongoose.Schema<Todo>({
   task: {
     type: String,
     required: [true, "Please provide a name for this pet."],
@@ -16,4 +16,4 @@ const TaskSchema = new mongoose.Schema<Task>({
   },
 });
 
-export default mongoose.models.Task || mongoose.model<Task>("Task", TaskSchema);
+export default mongoose.models.Todo || mongoose.model<Todo>("Todo", TodoSchema);
