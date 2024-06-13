@@ -29,9 +29,16 @@ export const useStore = create(
           const updatedTodo = { ...todoToUpdate, completed: !todoToUpdate.completed }
           const filteredTodos = state.todos.filter((todo: Todo) => todo.id !== id)
 
-          // add the changed todo to the end of the array
-          return {
-            todos: [...filteredTodos, updatedTodo],
+          // if the updated todo is completed, send to end of the array
+          // if the updated todo is toggled back to uncompleted, send to the start of the array
+          if (updatedTodo.completed === true) {
+            return {
+              todos: [...filteredTodos, updatedTodo],
+            }
+          } else {
+            return {
+              todos: [updatedTodo, ...filteredTodos],
+            }
           }
         })
       },
