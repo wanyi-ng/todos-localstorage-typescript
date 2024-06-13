@@ -1,16 +1,21 @@
 import mongoose from "mongoose";
 
 export interface Todo extends mongoose.Document {
+  id: string;
   task: string;
-  isCompleted: boolean;
+  completed: boolean;
 }
 
 const TodoSchema = new mongoose.Schema<Todo>({
+  id: {
+    type: String,
+    required: true,
+  },
   task: {
     type: String,
     required: [true, "Please provide a name for this pet."],
   },
-  isCompleted: {
+  completed: {
     type: Boolean,
     default: false,
   },
