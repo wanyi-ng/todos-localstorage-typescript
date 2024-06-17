@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "seed": "node lib/mongo/seed.ts",
     "start": "next start",
+    "seed": "node lib/mongo/seed.ts",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "uuidv4": "^6.2.13",
