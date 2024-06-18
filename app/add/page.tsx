@@ -12,7 +12,7 @@ interface TodoState {
   deleteAllTodos: () => void;
 }
 
-export default function AddTask() {
+export default function AddTaskPage() {
   const [todo, setTodo] = useState('')
   const { addTodo, deleteTodo, markAsCompleted, deleteAllTodos, todos } = useStore() as TodoState
   const [rearrangeTodos, setRearrangeTodos] = useState<Todo[]>([])
