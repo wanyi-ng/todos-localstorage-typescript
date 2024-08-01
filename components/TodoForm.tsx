@@ -29,9 +29,6 @@ export default function TodoForm() {
     setTodo('')
   }
 
-  console.log("todos: ", todos)
-  console.log("rearrangeTodos: ", rearrangeTodos)
-
   return (
     <>
       <div className="w-full max-w-screen-lg mx-auto">
